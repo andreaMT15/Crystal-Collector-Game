@@ -16,15 +16,27 @@ $("#crystal-2").html('<img src="assets/images/2.png">');
 $("#crystal-3").html('<img src="assets/images/3.png">');
 $("#crystal-4").html('<img src="assets/images/4.png">');
 
+for (var i = 0; i < crystalWorth.length; i++) {
 
-for (var i = 0; i < numberOptions.length; i++) {
-
-var crsytalImages = $("<img>");
-
-crsytalImages.addClass("crystal-images");
-crsytalImages.attr("data-crystalvalue", numberOptions[i]);
-
+    var crystalImages = $("<img>");
+    crystalImages.addClass("crystal-images");
+    crystalImages.attr("data-crystalvalue", crystalWorth[i]);
+    $("#crystals").append(crystalImages);
 }
+$(".crystal-images").on("click", function () {
+    var crystalNumbers = ($(this).attr("data-crystalvalue"));
+    crystalNumbers = parseInt(crystalNumbers);
+    counter += crystalNumbers;
+    alert("Your Score: " + counter);
+    if (counter === targetNumber) {
+        alert("You Win");
+        
+    }
+    else if (count > targetNumber) {
+        alert("You Lose!");  
+    }
+});
+
 
 //     // Each imageCrystal will be given a data attribute called data-crystalValue.
 //     // This data attribute will be set equal to the array value.
@@ -35,8 +47,7 @@ crsytalImages.attr("data-crystalvalue", numberOptions[i]);
 //   }
 
 //   // This time, our click event applies to every single crystal on the page. Not just one.
-//   $(".crystal-image").on("click", function() {
-
+//   
 //     // Determining the crystal's value requires us to extract the value from the data attribute.
 //     // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
 //     // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
