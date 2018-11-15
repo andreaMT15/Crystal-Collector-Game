@@ -26,6 +26,10 @@ $(document).ready(function() {
   $("#wins").text("Wins: ");
   $("#losses").text("Losses: ");
   $("#number-to-guess").text("Number to Guess: " + targetNumber);
+  $("#score").addClass("bottom");
+  $("#wins").addClass("bottom");
+  $("#losses").addClass("bottom");
+  $("#number-to-guess").addClass("bottom");
 });
 
 function resetGame() {
@@ -44,6 +48,9 @@ function createsImages() {
     console.log("Crystal Worth: " + crystalWorth);
     crystalImage.attr("data-crystalvalue", crystalWorth);
     $("#crystals").append(crystalImage);
+    $("img").attr("id", function(arr) {
+      return "id" + arr;
+    });
   }
 }
 $(document).on("click", ".crystal-image", function() {
