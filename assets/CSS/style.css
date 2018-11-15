@@ -5,9 +5,9 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 500px;
+  height: 800px;
   font-family: fantasy;
-  color: aliceblue;
+  color: antiquewhite;
   line-height: 280%;
 }
 
@@ -19,7 +19,7 @@ h1 {
 
 p {
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 #crystals {
@@ -31,7 +31,7 @@ p {
 .bottom {
   font-size: 25px;
   font-weight: bold;
-  margin-left: 20px;
+  margin-bottom: 30px;
 }
 
 #id0:hover {
