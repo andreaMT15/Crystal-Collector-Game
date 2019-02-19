@@ -1,4 +1,4 @@
-# Crystal Collector
+# Crystal Collector Game
 
 You will be given a random number at the start of the game.
 There will be 4 crystals displayed 
