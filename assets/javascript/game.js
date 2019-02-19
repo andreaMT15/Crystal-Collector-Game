@@ -3,15 +3,7 @@ var targetNumber = Math.floor(Math.random() * (120 - 19) + 19);
 var wins = 0;
 var losses = 0;
 var count = 0;
-var crystalWorth = Math.floor(Math.random() * (12 - 1) + 1);
-
-//Add the title into the header tag
-$("#title").html("<h1> The Crystal Collector</h2>");
-
-//Display the Instructions on the screen
-$("#instructions").html(
-  "<p>You will be given a random number at the start of the game.</p><p> There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p><p> You win the game by matching your total score to a random number, you lose the game if your total score goes above the random number.</p><p> The value of each crystal is hidden from you until you click on it.</p><p> Each time the game starts, the game will change the values of each crystal.</p> "
-);
+var crystalWorth = 0;
 
 //creating an array for the crystal images
 var imageList = [
@@ -37,15 +29,16 @@ function resetGame() {
   count = 0;
   $("#score").text("Your Score: ");
   $("#number-to-guess").text("Number to Guess: " + targetNumber);
-  // console.log("Reset Game Is Working") + resetGame;
+  $("#crystals").empty();
+  createsImages();
 }
+
 function createsImages() {
   for (var i = 0; i < 4; i++) {
     var crystalImage = $("<img>");
     crystalImage.addClass("crystal-image");
     crystalImage.attr("src", imageList[i]);
     crystalWorth = Math.floor(Math.random() * (12 - 1) + 1);
-    // console.log("Crystal Worth: " + crystalWorth);
     crystalImage.attr("data-crystalvalue", crystalWorth);
     $("#crystals").append(crystalImage);
     $("img").attr("id", function(arr) {
@@ -55,7 +48,6 @@ function createsImages() {
 }
 $(document).on("click", ".crystal-image", function() {
   var crystalNumbers = $(this).data("crystalvalue");
-  // console.log("Crystal Numbers: " + crystalNumbers);
   count += crystalNumbers;
   $("#score").text("Your Score: " + count);
 
@@ -68,7 +60,6 @@ $(document).on("click", ".crystal-image", function() {
   }
   if (count >= targetNumber) {
     resetGame();
-    // console.log("score reset");
   }
 });
 
