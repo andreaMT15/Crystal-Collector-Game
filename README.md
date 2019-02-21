@@ -1,7 +1,9 @@
 # Crystal Collector Game
 
-You will be given a random number at the start of the game.
-There will be 4 crystals displayed 
-By clicking on a crystal you will add a specific amount of points to your total score.
-You win the game by matching your total score to a random number, you lose the game if your total score goes above the random number.
-The value of each crystal is hidden from you until you click on it.</p><p> Each time the game starts, the game will change the values of each crystal.
+**Developer: Andrea Minhas**
+
+**Technologies Used: HTML, CSS, Javascript, JQuery**
+
+The Crystal Collector Game is a front end application in which the objective is for the user to try to reach the random number that the computer generates by clicking the crystals. The value of the crystals is hidden until the user clicks on them. Once the value of the crystal will be added to the user's total score. If the user can match their total score to the random number they will win and the game will reset. If they guess a number that is higher than the number that was generated, this will count as a loss and the game will reset. 
+
+
